@@ -1,5 +1,3 @@
-require 'date'
-
 class Facility
   attr_reader :name, 
               :address, 
