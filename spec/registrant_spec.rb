@@ -30,5 +30,33 @@ RSpec.describe Registrant do
         expect(@registrant_2.permit?).to eq(true)
       end
     end
+
+  
+    describe "#pass_written_test" do
+      it "has a pass written test method" do
+        expect(@registrant_1.license_data).to eq({:written=>false, :license=>false, :renewed=>false})
+        @registrant_1.pass_written_test
+        expect(@registrant_1.license_data).to eq({:written=>true, :license=>false, :renewed=>false})
+      end
+    end
+    
+    describe "#pass_road_test" do
+      it "has a pass road test method" do
+        expect(@registrant_1.license_data).to eq({:written=>false, :license=>false, :renewed=>false})
+        @registrant_1.pass_written_test
+        @registrant_1.pass_road_test
+        expect(@registrant_1.license_data).to eq({:written=>true, :license=>true, :renewed=>false})
+      end
+    end
+    
+    describe "#renew_license" do
+      it "has a renew license method" do
+        expect(@registrant_1.license_data).to eq({:written=>false, :license=>false, :renewed=>false})
+        @registrant_1.pass_written_test
+        @registrant_1.pass_road_test
+        @registrant_1.renew_license
+        expect(@registrant_1.license_data).to eq({:written=>true, :license=>true, :renewed=>true})
+      end
+    end
   end
 end
