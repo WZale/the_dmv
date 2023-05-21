@@ -19,6 +19,8 @@ class Registrant
     @permit = true
   end
 
+# Should these methods have logic in them in order to prevent improperly qualified registrants from being able to pass their tests?
+
   def pass_written_test
     @license_data[:written] = true
   end
