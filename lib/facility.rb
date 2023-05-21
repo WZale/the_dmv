@@ -46,11 +46,20 @@ class Facility
 
   def administer_road_test(registrant)
     if services.include?("Road Test") && registrant.license_data[:written] == true
-      registrant.pass_road_test
+    registrant.pass_road_test
+    true
+  else
+    false
+  end
+end
+
+  def renew_drivers_license(registrant)
+    if services.include?("Renew License") && registrant.license_data[:license] == true
+      registrant.renew_license
       true
     else
       false
-    end
+    end  
   end
 
 end
