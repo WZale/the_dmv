@@ -8,6 +8,18 @@ class FacilityFactory
   end
 
   def create_facilities
-    require 'pry'; binding.pry
+    @state_dmv_locations.map do |facility|
+      Facility.new( {name: facility[:title], address: oregon_address_formatter(facility[:location_1][:human_address]), phone: facility[:phone_number]} )
+    end
   end
+  
+  # helper methods
+  def oregon_address_formatter(address)
+    new_address = JSON.parse(address)
+    new_address = "#{new_address["address"]}, #{new_address["city"]}, #{new_address["state"]}, #{new_address["zip"]}" 
+  end
+
 end
+
+
+
