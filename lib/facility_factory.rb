@@ -9,7 +9,11 @@ class FacilityFactory
 
   def create_facilities
     @state_dmv_locations.map do |facility|
-      Facility.new( {name: facility[:title], address: oregon_address_formatter(facility[:location_1][:human_address]), phone: facility[:phone_number]} )
+      Facility.new({
+                    name: facility[:title], 
+                    address: oregon_address_formatter(facility[:location_1][:human_address]),
+                    phone: facility[:phone_number]
+                    })
     end
   end
   
