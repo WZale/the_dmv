@@ -43,6 +43,10 @@ RSpec.describe FacilityFactory do
   describe "#oregon_address_formatter" do
     it "can format DMV office addresses from Oregon" do
       # ???
+      #were you not sure how to test this one? Or just didn't get to it? 
+      # you can test it by sending in json (which is really just a string),
+      # you could google how to write json, and then ensure that the return
+      # value of this method is what you expect.
     end
   end
 

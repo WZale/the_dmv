@@ -39,7 +39,7 @@ RSpec.describe Registrant do
         expect(@registrant_1.license_data).to eq({:written=>true, :license=>false, :renewed=>false})
       end
     end
-    
+    #Great job testing all of these methods
     describe "#pass_road_test" do
       it "has a pass road test method" do
         expect(@registrant_1.license_data).to eq({:written=>false, :license=>false, :renewed=>false})

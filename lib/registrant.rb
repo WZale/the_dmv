@@ -2,6 +2,10 @@ class Registrant
     attr_reader :name, 
                 :age,
                 :permit,
+                #we don't actually want this :permit reader here
+                # our reader is technically the 'permit?' method
+                # since we want it to have the question  mark at 
+                #the end to indicate a boolean value.
                 :license_data
 
   def initialize(name, age, permit = false)

@@ -21,6 +21,8 @@ RSpec.describe VehicleFactory do
     expect(factory.create_vehicles(wa_ev_registrations)).to be_an(Array)
     expect(factory.create_vehicles(wa_ev_registrations)[0]).to be_an_instance_of(Vehicle)
     expect(factory.create_vehicles(wa_ev_registrations)[0].engine).to eq(:ev)
+    #Yeah, this is fine for the testing since we don't really want to test
+    #the actual data that's coming in.
     end
   end
 
