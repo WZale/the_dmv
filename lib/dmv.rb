@@ -14,4 +14,6 @@ class Dmv
       facility.services.include?(service)
     end
   end
+  #Great use of find_all
 end
+

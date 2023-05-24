@@ -21,6 +21,11 @@ class Facility
 
   def register_vehicle(vehicle)
     if services.include?("Vehicle Registration")
+      # Look into a 'guard clause' to reduce the nested if
+      #blocks here. It would look like this:
+      # return nil if !serivces.include?("Vehicle Registraion")
+      # And then all your other code can be in the if/else
+      #stmt but not nested. 
       vehicle.issue_plate
       if vehicle.antique?
         @collected_fees += 25
@@ -55,6 +60,7 @@ end
 
   def renew_drivers_license(registrant)
     if services.include?("Renew License") && registrant.license_data[:license] == true
+      #Good job with all this boolean logic.
       registrant.renew_license
       true
     else

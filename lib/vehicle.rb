@@ -18,6 +18,8 @@ class Vehicle
     @registration_date = nil
     @plate_type = :regular
   end
+# This all looks really good, nice work digging into the hash
+# to set these instance variables
 
   def antique?
     Date.today.year - @year > 25

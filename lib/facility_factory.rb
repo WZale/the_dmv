@@ -9,6 +9,9 @@ class FacilityFactory
 
   def create_facilities
     if  self.name == "Oregon"
+      #you shouldn't need to use self here, if you use
+      # @name == "Oregon"
+      # that should work just fine.
       orgeon_facility_creator
     elsif self.name == "New York"
       new_york_facility_creator
@@ -59,4 +62,5 @@ class FacilityFactory
 end
 
 
-
+#Yeah, I really like all the helper methods you created in this class!
+# It looks good, very clean.

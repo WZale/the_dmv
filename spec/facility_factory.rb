@@ -1,5 +1,5 @@
 require "spec_helper"
-
+# I think this file isn't supposed to be in the project? 
 RSpec.describe FacilityFactory do
   describe "#initialize" do
     it "exists" do

@@ -22,6 +22,11 @@ RSpec.describe Vehicle do
     it "can determine if a vehicle is an antique" do
       expect(@cruz.antique?).to eq(false)
       expect(@bolt.antique?).to eq(false)
+      # You don't really need to test all three cars
+      #every time. Think about the method and what needs
+      # to be tested for the method. Here, we really
+      #just need to make sure the true and false paths
+      # are tested, so just testing two cars would suffice.
       expect(@camaro.antique?).to eq(true)
     end
   end
@@ -39,6 +44,8 @@ RSpec.describe Vehicle do
       expect(@cruz.issue_plate).to eq(:regular)
       expect(@camaro.issue_plate).to eq(:antique)
       expect(@bolt.issue_plate).to eq(:ev)
+      #Here we WOULD want to test all three since we have
+      # 3 different options in our flow control for this method.
     end
   end
 end
